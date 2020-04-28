@@ -102,14 +102,8 @@ Rational operator-(const Rational &left, const Rational &right)
 Rational operator*(const Rational &left, const Rational &right)
 {
   Rational temp;
-  Rational temp_2(right.getNumerator(), left.getDenominator());
-  Rational temp_3(left.getNumerator(), right.getDenominator());
-  int a = temp_2.getDenominator();
-  int b = temp_2.getNumerator();
-  int c = temp_3.getDenominator();
-  int d = temp_3.getNumerator();
-  temp.setNumerator(b * d);
-  temp.setDenominator(a * c);
+  temp.setNumerator(right.getNumerator() * left.getNumerator());
+  temp.setDenominator(left.getDenominator() * right.getDenominator());
   return temp;
 }
 
